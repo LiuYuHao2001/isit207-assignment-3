@@ -1,20 +1,61 @@
-import "./Header.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
+import Button from "./Button";
 
-function Header() {
+const Header = ({ isLoggedIn, onLogout }) => {
   return (
-    <header>
-      <h1 className="logo">Pet Heaven</h1>
+    <header className={styles.header}>
+      <h2>
+        <Link to="/" className={styles.navLink}>
+          Pet Heaven
+        </Link>
+      </h2>
       <nav>
-        <a href="#">Adopt</a>
-        <a href="#">Gallery</a>
-        <a href="#">Service</a>
-        <a href="#">Release</a>
-        <a href="#">Contact</a>
-        <a href="#">About Us</a>
-        <a href="#">Log In</a>
+        <ul className={styles.navList}>
+          <li>
+            <Link to="/gallery" className={styles.navLink}>
+              Gallery
+            </Link>
+          </li>
+          <li>
+            <Link to="/products" className={styles.navLink}>
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className={styles.navLink}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/aboutus" className={styles.navLink}>
+              About Us
+            </Link>
+          </li>
+          {!isLoggedIn && (
+            <li>
+              <Link to="/login" className={styles.navLink}>
+                Log In
+              </Link>
+            </li>
+          )}
+          {/* {!isLoggedIn && (
+            <li>
+              <Link to="/signup" className={styles.navLink}>Sign Up</Link>
+            </li>
+          )} */}
+          {isLoggedIn && (
+            <li>
+              <button onClick={onLogout} className={styles.logoutButton}>
+                Logout
+              </button>
+            </li>
+          )}
+        </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
