@@ -2,6 +2,7 @@ import React from "react";
 import Cat from "../assets/cat.jpeg";
 import Dog from "../assets/dog.jpeg";
 import styles from "./Home.module.css";
+import Card from "../components/Card";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -17,8 +18,8 @@ const Home = () => {
         </div>
         <div className={styles.heroImage}>
           <img
-            src="/path/to/cat-and-dog-together.jpg"
-            alt="Happy cat and dog together waiting for adoption"
+            src="../src/assets/heroBackground1.jpg"
+            alt="Hero Section Background"
           />
         </div>
       </section>
@@ -41,67 +42,31 @@ const Home = () => {
       </section>
 
       <section className={styles.featuresSection}>
-        <div className={styles.container}>
-          <div className={styles.featuresHeader}>
-            <h2>Why Adoption Makes Sense</h2>
-            <p>
-              Every adoption creates a happy ending for both pets and families
-            </p>
-          </div>
-
-          <div className={styles.featuresGrid}>
-            <div className={styles.featureItem}>
-              <div className={styles.featureIconWrapper}>
-                <span className={styles.featureIcon}>✅</span>
-              </div>
-              <div className={styles.featureContent}>
-                <h3>Health Guarantee</h3>
-                <p>
-                  All rescues are certified to be spayed/neutered with
-                  vaccinations up-to-date and complete health screenings.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.featureItem}>
-              <div className={styles.featureIconWrapper}>
-                <span className={styles.featureIcon}>🐕</span>
-              </div>
-              <div className={styles.featureContent}>
-                <h3>Lifetime Companion</h3>
-                <p>
-                  Find your family's new best friend today. Experience the
-                  unconditional love only a rescue pet can provide.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.featureItem}>
-              <div className={styles.featureIconWrapper}>
-                <span className={styles.featureIcon}>👨‍🏫</span>
-              </div>
-              <div className={styles.featureContent}>
-                <h3>Professional Support</h3>
-                <p>
-                  First-time pet owners learn the ins-and-outs of caring and
-                  being cared-for by an animal with our expert guidance.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.featureItem}>
-              <div className={styles.featureIconWrapper}>
-                <span className={styles.featureIcon}>🔍</span>
-              </div>
-              <div className={styles.featureContent}>
-                <h3>Wider Search</h3>
-                <p>
-                  If you don't find your perfect match, we can refer you to
-                  other trusted adoption centers in our network.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className={styles.featuresHeader}>
+          <h2>Why Adoption Makes Sense</h2>
+          <p>Every adoption creates a happy ending for both pets and families</p>
+        </div>
+        <div className={styles.featuresGrid}>
+          <Card
+            imageUrl={null}
+            title="Health Guarantee"
+            description="All rescues are certified to be spayed/neutered with vaccinations up-to-date and complete health screenings."
+          />
+          <Card
+            imageUrl={null}
+            title="Lifetime Companion"
+            description="Find your family's new best friend today. Experience the unconditional love only a rescue pet can provide."
+          />
+          <Card
+            imageUrl={null}
+            title="Professional Support"
+            description="First-time pet owners learn the ins-and-outs of caring and being cared-for by an animal with our expert guidance."
+          />
+          <Card
+            imageUrl={null}
+            title="Wider Search"
+            description="If you don't find your perfect match, we can refer you to other trusted adoption centers in our network."
+          />
         </div>
       </section>
     </div>
