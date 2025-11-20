@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import Header from "./components/Header.jsx";
 import Footer from "./components/Footer";
-import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import CatAdoption from "./pages/CatAdoption.jsx";
-
+import Cats from "./pages/Cats.jsx";
+import Dogs from "./pages/Dogs.jsx";
+import ErrorPage from "./pages/ErrorPage";
 import "./App.css";
 
 const App = () => {
@@ -24,24 +25,23 @@ const App = () => {
   };
 
   return (
-    <>
-      <Router>
-        <Navigation isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/gallery" element={<CatAdoption />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
-        </div>
-      </Router>
-
+    <BrowserRouter>
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cats" element={<Cats />} />
+          <Route path="/dogs" element={<Dogs />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 
