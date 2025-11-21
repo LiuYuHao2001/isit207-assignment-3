@@ -1,4 +1,18 @@
 import styles from "./Footer.module.css";
+import {
+  FaPhoneAlt,
+  FaTelegram,
+  FaBox,
+  FaBell,
+  FaCat,
+  FaDog,
+  FaInfo,
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebook,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -6,68 +20,62 @@ function Footer() {
       <div className={styles.footerSection}>
         <h3>Contact Us</h3>
         <a href="#" className={styles.footerLink}>
-          Tel: +65 87654321
+          <FaPhoneAlt /> Tel: +65 87654321
         </a>
         <a href="#" className={styles.footerLink}>
-          Whatsapp
+          <FaWhatsapp /> Whatsapp
         </a>
         <a href="#" className={styles.footerLink}>
-          Telegram
-        </a>
-        <a href="#" className={styles.footerLink}>
-          Fax: +65 87654321
-        </a>
-        <a href="#" className={styles.footerLink}>
-          Open 24/7
+          <FaTelegram /> Telegram
         </a>
       </div>
 
       <div className={styles.footerSection}>
         <h3>Quick Links</h3>
         <a href="#" className={styles.footerLink}>
-          Reserve
+          <FaBox /> Products
         </a>
         <a href="#" className={styles.footerLink}>
-          Rent
+          <FaBell /> Services
         </a>
         <a href="#" className={styles.footerLink}>
-          Return
+          <FaCat /> Adopt Cats
         </a>
         <a href="#" className={styles.footerLink}>
-          Contact
+          <FaDog /> Adopt Dogs
         </a>
         <a href="#" className={styles.footerLink}>
-          About Us
+          <FaInfo /> About Us
         </a>
       </div>
 
       <div className={styles.footerSection}>
         <h3>Follow Us</h3>
         <a href="#" className={styles.footerLink}>
-          Instagram
+          <FaInstagram /> Instagram
         </a>
         <a href="#" className={styles.footerLink}>
-          TikTok
+          <FaTiktok /> Tiktok
         </a>
         <a href="#" className={styles.footerLink}>
-          YouTube
+          <FaYoutube /> YouTube
         </a>
         <a href="#" className={styles.footerLink}>
-          Facebook
+          <FaFacebook /> Facebook
         </a>
       </div>
 
       <div className={styles.footerSection}>
-        <h3>Download our mobile app!</h3>
-        <p>Available now on Android and iOS</p>
+        <h3>Donate today!</h3>
         <img
           className={styles.qrCode}
-          src="images/qrcode.png"
-          alt="QR Code for mobile app download"
+          src="../src/assets/qrCode.png"
+          alt="QR Code for donation"
         />
+        <p>Pet Heaven is a non-profit organization.</p>
         <p>
-          Scan the QR code above, or look up the Pet Heaven app in Play Store or
-          Apple Store
+          100% of donations go to feeding our volunteers and caring for rescue
+          animals
         </p>
       </div>
     </footer>

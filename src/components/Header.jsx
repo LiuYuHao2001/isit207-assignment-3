@@ -1,7 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import Button from "./Button";
 
 const Header = ({ isLoggedIn, onLogout }) => {
   return (
@@ -13,11 +11,6 @@ const Header = ({ isLoggedIn, onLogout }) => {
       </h2>
       <nav>
         <ul className={styles.navList}>
-          <li>
-            <Link to="/gallery" className={styles.navLink}>
-              Gallery
-            </Link>
-          </li>
           <li>
             <Link to="/products" className={styles.navLink}>
               Products
