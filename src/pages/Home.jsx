@@ -1,8 +1,12 @@
-import Cat from "../assets/cat.jpeg";
-import Dog from "../assets/dog.jpeg";
-import styles from "./Home.module.css";
-import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import Card from "../components/Card";
+import catBackground from "../assets/cat.png";
+import dogBackground from "../assets/dog.png";
+import heroBackground from "../assets/heroBackground1.png";
+import medicalIcon from "../assets/medical.png";
+import supportIcon from "../assets/support.png";
+import searchIcon from "../assets/magnifyingGlass.png";
+import styles from "./Home.module.css";
 
 const Home = () => {
   return (
@@ -18,24 +22,29 @@ const Home = () => {
           </p>
         </div>
         <div className={styles.heroImage}>
-          <img
-            src="../src/assets/heroBackground1.jpg"
-            alt="Hero Section Background"
-          />
+          <img src={heroBackground} alt="Hero Section Background" />
         </div>
       </section>
 
       <section className={styles.petSelectionSection}>
         <Link to="cats" className={styles.petPageButton}>
           <div className={styles.imageContainer}>
-            <img src={Cat} className={styles.petBackground} alt="Adopt a cat" />
+            <img
+              src={catBackground}
+              className={styles.petBackground}
+              alt="Adopt a cat"
+            />
             <div className={styles.overlay}></div>
           </div>
           <p className={styles.petText}>Adopt a cat</p>
         </Link>
         <Link to="dogs" className={styles.petPageButton}>
           <div className={styles.imageContainer}>
-            <img src={Dog} className={styles.petBackground} alt="Adopt a dog" />
+            <img
+              src={dogBackground}
+              className={styles.petBackground}
+              alt="Adopt a dog"
+            />
             <div className={styles.overlay}></div>
           </div>
           <p className={styles.petText}>Adopt a dog</p>
@@ -49,17 +58,17 @@ const Home = () => {
         </div>
         <div className={styles.featuresGrid}>
           <Card
-            imageUrl={"../src/assets/medical.png"}
+            imageUrl={medicalIcon}
             title="Health Guarantee"
             description="All rescues are certified to be spayed/neutered, with up-to-date vaccinations and complete health screenings."
           />
           <Card
-            imageUrl={"../src/assets/support.png"}
+            imageUrl={supportIcon}
             title="Professional Support"
             description="First-time pet owners learn to care and be cared-for by an animal with our expert guidance."
           />
           <Card
-            imageUrl={"../src/assets/magnifyingGlass.png"}
+            imageUrl={searchIcon}
             title="Wider Search"
             description="If you don't find your perfect match, we can refer you to other trusted adoption centers in our network."
           />

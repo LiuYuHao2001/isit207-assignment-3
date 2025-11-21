@@ -25,7 +25,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/isit207-assignment-3">
       <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
       <div className="container">
         <Routes>
