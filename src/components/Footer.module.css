@@ -28,6 +28,17 @@
     color: gray;
 }
 
-.qrCode {
-    max-width: 5rem;
+.donateButton {
+    background: #ff6b6b;
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 60%;
+    transition: background-color 0.3s;
+}
+
+.donateButton:hover {
+    background: #ff5252;
 }

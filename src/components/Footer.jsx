@@ -1,5 +1,4 @@
 import styles from "./Footer.module.css";
-import qrCodeImage from "../assets/qrCode.png";
 import {
   FaPhoneAlt,
   FaTelegram,
@@ -68,11 +67,7 @@ function Footer() {
 
       <div className={styles.footerSection}>
         <h3>Support our mission</h3>
-        <img
-          className={styles.qrCode}
-          src={qrCodeImage}
-          alt="QR Code for donation"
-        />
+        <button className={styles.donateButton}>Donate Now</button>
         <p>Pet Heaven is a 100% volunteer-run non-profit.</p>
         <p>
           Your donations go to food, shelter, and medicine for rescue animals
