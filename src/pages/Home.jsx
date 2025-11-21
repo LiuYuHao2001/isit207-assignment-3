@@ -1,4 +1,3 @@
-import React from "react";
 import Cat from "../assets/cat.jpeg";
 import Dog from "../assets/dog.jpeg";
 import styles from "./Home.module.css";
@@ -12,8 +11,10 @@ const Home = () => {
         <div className={styles.heroContent}>
           <h1>Adopt, Don't Shop</h1>
           <p className={styles.heroSubtitle}>
-            Give a homeless pet their forever home. Hundreds of loving animals
-            are waiting for a second chance at happiness.
+            Meet your family's new best friend today.
+          </p>
+          <p className={styles.heroSubtitle}>
+            Adopt a cat or dog today for free.
           </p>
         </div>
         <div className={styles.heroImage}>
@@ -43,27 +44,22 @@ const Home = () => {
 
       <section className={styles.featuresSection}>
         <div className={styles.featuresHeader}>
-          <h2>Why Adoption Makes Sense</h2>
-          <p>Every adoption creates a happy ending for both pets and families</p>
+          <h2>Why Adopt From Us?</h2>
+          <p>Give a loving animal the home they deserve.</p>
         </div>
         <div className={styles.featuresGrid}>
           <Card
-            imageUrl={null}
+            imageUrl={"../src/assets/medical.png"}
             title="Health Guarantee"
-            description="All rescues are certified to be spayed/neutered with vaccinations up-to-date and complete health screenings."
+            description="All rescues are certified to be spayed/neutered, with up-to-date vaccinations and complete health screenings."
           />
           <Card
-            imageUrl={null}
-            title="Lifetime Companion"
-            description="Find your family's new best friend today. Experience the unconditional love only a rescue pet can provide."
-          />
-          <Card
-            imageUrl={null}
+            imageUrl={"../src/assets/support.png"}
             title="Professional Support"
-            description="First-time pet owners learn the ins-and-outs of caring and being cared-for by an animal with our expert guidance."
+            description="First-time pet owners learn to care and be cared-for by an animal with our expert guidance."
           />
           <Card
-            imageUrl={null}
+            imageUrl={"../src/assets/magnifyingGlass.png"}
             title="Wider Search"
             description="If you don't find your perfect match, we can refer you to other trusted adoption centers in our network."
           />

@@ -1,8 +1,8 @@
 .heroSection {
   display: flex;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
+  min-height: 85dvh;
+  padding: 0 8rem;
   scroll-snap-align: start;
 }
 
@@ -33,7 +33,7 @@
 
 .petSelectionSection {
   display: flex;
-  min-height: 100vh;
+  min-height: 85dvh;
   scroll-snap-align: start;
 }
 
@@ -78,8 +78,7 @@
 }
 
 .featuresSection {
-  padding: 4rem 2rem;
-  height: 60vh;
+  padding: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,12 +87,11 @@
 
 .featuresHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .featuresHeader h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
 .featuresHeader p {

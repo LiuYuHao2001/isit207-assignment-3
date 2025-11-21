@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
-import Header from "./components/Header.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -8,8 +8,8 @@ import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Cats from "./pages/Cats.jsx";
-import Dogs from "./pages/Dogs.jsx";
+import Cats from "./pages/Cats";
+import Dogs from "./pages/Dogs";
 import ErrorPage from "./pages/ErrorPage";
 import "./App.css";
 
