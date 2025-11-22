@@ -97,7 +97,7 @@
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
 }
 
 .featuresHeader {
