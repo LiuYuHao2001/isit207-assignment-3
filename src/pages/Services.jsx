@@ -29,7 +29,7 @@ const Services = () => {
   ];
 
   return (
-    <Grid minWidth="250px" gap="2rem">
+    <Grid>
       {services.map((service) => (
         <Card
           key={service.id}
