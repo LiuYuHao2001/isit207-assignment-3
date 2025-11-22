@@ -57,13 +57,23 @@
     cursor: not-allowed;
 }
 
-.error {
-    background: #ffebee;
-    color: #d32f2f;
+.message {
     padding: 0.75rem;
     border-radius: 4px;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.error {
+    background-color: #ffeaea;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+}
+
+.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
 }
 
 .switch {
