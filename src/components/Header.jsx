@@ -1,16 +1,47 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import styles from "./Header.module.css";
 
 const Header = ({ isLoggedIn, onLogout }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <h2>
-        <NavLink to="/" className={styles.navLink} end>
+        <NavLink
+          to="/"
+          className={styles.navLink}
+          end
+          onClick={closeMobileMenu}
+        >
           Pet Heaven
         </NavLink>
       </h2>
-      <nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className={styles.mobileMenuButton}
+        onClick={toggleMobileMenu}
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Navigation */}
+      <nav
+        className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ""}`}
+      >
         <ul className={styles.navList}>
           <li>
             <NavLink
@@ -18,6 +49,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
               className={({ isActive }) =>
                 isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
               }
+              onClick={closeMobileMenu}
             >
               Products
             </NavLink>
@@ -28,6 +60,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
               className={({ isActive }) =>
                 isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
               }
+              onClick={closeMobileMenu}
             >
               Services
             </NavLink>
@@ -38,6 +71,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
               className={({ isActive }) =>
                 isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
               }
+              onClick={closeMobileMenu}
             >
               About Us
             </NavLink>
@@ -51,6 +85,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
                     ? `${styles.navLink} ${styles.active}`
                     : styles.navLink
                 }
+                onClick={closeMobileMenu}
               >
                 Log In
               </NavLink>
@@ -58,14 +93,27 @@ const Header = ({ isLoggedIn, onLogout }) => {
           )}
           {isLoggedIn && (
             <li>
-              <button onClick={onLogout} className={styles.logoutButton}>
+              <button
+                onClick={() => {
+                  onLogout();
+                  closeMobileMenu();
+                }}
+                className={styles.logoutButton}
+              >
                 Logout
               </button>
             </li>
           )}
-          <ThemeToggle />
+          <li className={styles.themeToggleMobile}>
+            <ThemeToggle />
+          </li>
         </ul>
       </nav>
+
+      {/* Desktop Theme Toggle */}
+      <div className={styles.themeToggleDesktop}>
+        <ThemeToggle />
+      </div>
     </header>
   );
 };
