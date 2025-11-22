@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Grid from "../components/Grid";
-import catBackground from "../assets/cat.png";
-import dogBackground from "../assets/dog.png";
+import catBackground from "../assets/cat.gif";
+import dogBackground from "../assets/dog.gif";
 import heroBackground from "../assets/heroBackground1.png";
 import medicalIcon from "../assets/health.png";
 import supportIcon from "../assets/support.png";
