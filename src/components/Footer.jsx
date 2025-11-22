@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import {
   FaPhoneAlt,
@@ -22,45 +23,45 @@ function Footer() {
         <a href="#" className={styles.footerLink}>
           <FaPhoneAlt /> Tel: +65 87654321
         </a>
-        <a href="#" className={styles.footerLink}>
+        <a href="whatsapp.com" className={styles.footerLink}>
           <FaWhatsapp /> Whatsapp
         </a>
-        <a href="#" className={styles.footerLink}>
+        <a href="telegram.com" className={styles.footerLink}>
           <FaTelegram /> Telegram
         </a>
       </div>
 
       <div className={styles.footerSection}>
         <h3>Quick Links</h3>
-        <a href="#" className={styles.footerLink}>
+        <Link to="/products" className={styles.footerLink}>
           <FaBox /> Products
-        </a>
-        <a href="#" className={styles.footerLink}>
+        </Link>
+        <Link to="/services" className={styles.footerLink}>
           <FaBell /> Services
-        </a>
-        <a href="#" className={styles.footerLink}>
+        </Link>
+        <Link to="/cats" className={styles.footerLink}>
           <FaCat /> Adopt Cats
-        </a>
-        <a href="#" className={styles.footerLink}>
+        </Link>
+        <Link to="/dogs" className={styles.footerLink}>
           <FaDog /> Adopt Dogs
-        </a>
-        <a href="#" className={styles.footerLink}>
+        </Link>
+        <Link to="/aboutus" className={styles.footerLink}>
           <FaInfo /> About Us
-        </a>
+        </Link>
       </div>
 
       <div className={styles.footerSection}>
         <h3>Follow Us</h3>
-        <a href="#" className={styles.footerLink}>
+        <a href="instagram.com" className={styles.footerLink}>
           <FaInstagram /> Instagram
         </a>
-        <a href="#" className={styles.footerLink}>
+        <a href="tiktok.com" className={styles.footerLink}>
           <FaTiktok /> Tiktok
         </a>
-        <a href="#" className={styles.footerLink}>
+        <a href="youtube.com" className={styles.footerLink}>
           <FaYoutube /> YouTube
         </a>
-        <a href="#" className={styles.footerLink}>
+        <a href="facebook.com" className={styles.footerLink}>
           <FaFacebook /> Facebook
         </a>
       </div>
