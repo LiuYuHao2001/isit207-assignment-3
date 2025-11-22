@@ -27,7 +27,7 @@ const Adopt = () => {
         pet?.name || "this pet"
       }! We'll contact you soon.`
     );
-    navigate("/pets");
+    navigate("/");
   };
 
   return (
