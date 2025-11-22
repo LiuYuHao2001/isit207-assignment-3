@@ -1,8 +1,27 @@
+import { useNavigate } from "react-router-dom";
 import Resource from "../components/Resource";
+import Card from "../components/Card";
+import Grid from "../components/Grid";
 import styles from "./Pets.module.css";
 
-const Pets = ({ apiUrl, petType, apiKey }) => {
-  // Add apiKey prop
+const Pets = ({ petType, apiUrl, apiKey }) => {
+  const navigate = useNavigate();
+
+  const handleAdoptClick = (pet) => {
+    navigate("/adopt", {
+      state: {
+        pet: {
+          id: pet.id,
+          name: pet.breeds?.[0]?.name || "Unknown Breed",
+          breed: pet.breeds?.[0]?.name || "Unknown Breed",
+          description:
+            pet.breeds?.[0]?.description || "No description available",
+          image: pet.url,
+        },
+      },
+    });
+  };
+
   const render = (data) => {
     if (data.loading === true)
       return <p className={styles.loading}>Fetching {petType}...</p>;
@@ -20,7 +39,6 @@ const Pets = ({ apiUrl, petType, apiKey }) => {
 
     console.log(`${petType} API fetched successfully: `, data);
 
-    // Add safety check for data.trans
     if (!Array.isArray(data.trans)) {
       return (
         <div className={styles.error}>
@@ -31,36 +49,33 @@ const Pets = ({ apiUrl, petType, apiKey }) => {
     }
 
     return (
-      <div className={styles.container}>
-        {data.trans.map((pet) => {
-          const breedInfo = pet.breeds && pet.breeds[0];
+      <>
+        <h1 className={styles.introduction}>A Fresh Start</h1>
+        <p className={styles.introduction}>
+          All our animals shed their names on arrival: their new name (and life)
+          is up to you.
+        </p>
+        <Grid>
+          {data.trans.map((pet) => {
+            const breed =
+              pet.breeds && pet.breeds.length > 0 ? pet.breeds[0] : null;
 
-          return (
-            <div key={pet.id} className={styles.card}>
-              <img
-                className={styles.image}
-                src={pet.url}
-                alt={breedInfo ? breedInfo.name : petType}
-              />
-              <div className={styles.content}>
-                <h3 className={styles.name}>
-                  {breedInfo ? breedInfo.name : "Unknown Name"}
-                </h3>
-                <p className={styles.description}>
-                  {breedInfo
-                    ? breedInfo.description
-                    : `A lovely ${petType} looking for a home`}
-                </p>
-                {breedInfo && breedInfo.temperament && (
-                  <p className={styles.temperament}>
-                    <strong>Personality:</strong> {breedInfo.temperament}
-                  </p>
-                )}
+            return (
+              <div key={pet.id} className={styles.card}>
+                <Card
+                  image={pet.url}
+                  title={breed ? breed.name : "Unknown Breed"}
+                  description={
+                    breed.description ? breed.description : breed.temperament
+                  }
+                  buttonText="Adopt"
+                  onButtonClick={() => handleAdoptClick(pet)}
+                />
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </Grid>
+      </>
     );
   };
 

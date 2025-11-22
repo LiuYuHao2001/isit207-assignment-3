@@ -14,6 +14,8 @@ const Login = ({ onLogin }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const Login = ({ onLogin }) => {
           onLogin();
         }
 
-        navigate("/"); // Redirect to home after login
+        navigate(from, { replace: true }); // redirect to origin after log-in
       }
     } catch (error) {
       console.error("Authentication error:", error.message);

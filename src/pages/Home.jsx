@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import Grid from "../components/Grid";
 import catBackground from "../assets/cat.png";
 import dogBackground from "../assets/dog.png";
 import heroBackground from "../assets/heroBackground1.png";
-import medicalIcon from "../assets/medical.png";
+import medicalIcon from "../assets/health.png";
 import supportIcon from "../assets/support.png";
-import searchIcon from "../assets/magnifyingGlass.png";
+import searchIcon from "../assets/search.png";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -56,23 +57,24 @@ const Home = () => {
           <h2>Why Adopt From Us?</h2>
           <p>Give a loving animal the home they deserve.</p>
         </div>
-        <div className={styles.featuresGrid}>
+
+        <Grid>
           <Card
-            imageUrl={medicalIcon}
+            image={medicalIcon}
             title="Health Guarantee"
-            description="All rescues are certified to be spayed/neutered, with up-to-date vaccinations and complete health screenings."
+            description="All rescues are certified to be neutered, with up-to-date vaccinations and complete health screenings."
           />
           <Card
-            imageUrl={supportIcon}
+            image={supportIcon}
             title="Professional Support"
             description="First-time pet owners learn to care and be cared-for by an animal with our expert guidance."
           />
           <Card
-            imageUrl={searchIcon}
+            image={searchIcon}
             title="Wider Search"
             description="If you don't find your perfect match, we can refer you to other trusted adoption centers in our network."
           />
-        </div>
+        </Grid>
       </section>
     </div>
   );
