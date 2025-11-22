@@ -1,11 +1,42 @@
-import React from "react";
+import Grid from "../components/Grid";
+import Card from "../components/Card";
+import catFood from "../assets/catFood1kg.png";
+import dogFood from "../assets/dogFood1kg.png";
+import petLeash from "../assets/petLeash.png";
 
 const Products = () => {
+  const products = [
+    {
+      id: 1,
+      image: catFood,
+      title: "Cat Food",
+      description: "1 kilogram of cat food for all your feline needs",
+    },
+    {
+      id: 2,
+      image: dogFood,
+      title: "Dog Food",
+      description: "1 kilogram of dog food for all your canine needs",
+    },
+    {
+      id: 3,
+      image: petLeash,
+      title: "Pet Collar + Leash",
+      description: "A tool for long walks with your furry friend",
+    },
+  ];
+
   return (
-    <div>
-      <h1>Our Products</h1>
-      <p>Here is a list of our products.</p>
-    </div>
+    <Grid minWidth="250px" gap="2rem">
+      {products.map((product) => (
+        <Card
+          key={product.id}
+          image={product.image}
+          title={product.title}
+          description={product.description}
+        />
+      ))}
+    </Grid>
   );
 };
 
