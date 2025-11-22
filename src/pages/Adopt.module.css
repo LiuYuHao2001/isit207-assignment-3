@@ -2,6 +2,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    color: var(--text-primary);
 }
 
 .header {
@@ -10,12 +11,12 @@
 }
 
 .header h1 {
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .header p {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 1.1rem;
 }
 
@@ -24,9 +25,10 @@
     gap: 2rem;
     margin-bottom: 3rem;
     padding: 2rem;
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     border-radius: 12px;
     align-items: center;
+    border: 1px solid var(--border-color);
 }
 
 .petImage {
@@ -38,12 +40,12 @@
 
 .petDetails h2 {
     margin: 0 0 0.5rem 0;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .petDetails p {
     margin: 0.25rem 0;
-    color: #666;
+    color: var(--text-secondary);
 }
 
 .description {

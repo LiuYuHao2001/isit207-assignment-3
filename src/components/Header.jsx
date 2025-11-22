@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 import styles from "./Header.module.css";
 
 const Header = ({ isLoggedIn, onLogout }) => {
@@ -62,6 +63,7 @@ const Header = ({ isLoggedIn, onLogout }) => {
               </button>
             </li>
           )}
+          <ThemeToggle />
         </ul>
       </nav>
     </header>

@@ -1,44 +1,245 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    color: white;
-    background-color: black;
-    padding: 2rem;
+    flex-wrap: wrap;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    padding: 3rem 2rem;
     min-height: 30dvh;
+    border-top: 1px solid var(--border-color);
+    gap: 2rem;
 }
 
 .footerSection {
     display: flex;
     flex-direction: column;
-    margin: 0 2rem;
-    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+    gap: 1rem;
 }
 
-.footerSection p {
-    margin: 0;
-    line-height: 1.4;
+.footerSection h3 {
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.footerSection h3::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .footerLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
-    color: white;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
 }
 
 .footerLink:hover {
-    color: gray;
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.footerLink svg {
+    font-size: 1.1rem;
+    min-width: 20px;
+}
+
+.donateSurrender {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.donateSurrender h3 {
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.donateSurrender p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .donateButton {
-    background: #ff6b6b;
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
-    padding: 1rem;
-    border-radius: 1rem;
-    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
-    width: 60%;
-    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .donateButton:hover {
-    background: #ff5252;
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.surrenderButton {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+    margin-top: 0.5rem;
+}
+
+.surrenderButton:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Bottom Bar Styles */
+.footerBottom {
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+}
+
+.footerBottomContent {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footerBottomContent p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heartIcon {
+    color: #ef4444;
+    font-size: 0.8rem;
+}
+
+.footerBottomLinks {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footerBottomLinks a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footerBottomLinks a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .footerSection {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .footerSection {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footerSection h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footerLink {
+        justify-content: center;
+    }
+
+    .donateButton,
+    .surrenderButton {
+        max-width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    .donateSurrender {
+        text-align: center;
+    }
+
+    .footerBottomContent {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .footerBottomLinks {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footerSection h3 {
+        font-size: 1.1rem;
+    }
+
+    .footerLink {
+        font-size: 0.9rem;
+    }
+
+    .donateButton,
+    .surrenderButton {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .footerBottom {
+        padding: 1rem;
+    }
 }

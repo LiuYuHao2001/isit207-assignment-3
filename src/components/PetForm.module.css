@@ -2,21 +2,22 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .petForm h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .formSection {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .formSection:last-of-type {
@@ -25,7 +26,7 @@
 
 .formSection h3 {
     margin-bottom: 1.5rem;
-    color: #444;
+    color: var(--text-primary);
     font-size: 1.2rem;
 }
 
@@ -43,7 +44,7 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .formGroup input,
@@ -51,17 +52,19 @@
 .formGroup textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
     transition: border-color 0.2s;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .formGroup input:focus,
 .formGroup select:focus,
 .formGroup textarea:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: var(--accent-color);
 }
 
 .radioGroup {
@@ -76,6 +79,7 @@
     gap: 0.5rem;
     font-weight: normal;
     cursor: pointer;
+    color: var(--text-primary);
 }
 
 .radioGroup input[type="radio"] {
@@ -85,7 +89,7 @@
 .submitButton {
     width: 100%;
     padding: 1rem;
-    background: #007bff;
+    background: var(--accent-color);
     color: white;
     border: none;
     border-radius: 6px;
@@ -96,11 +100,11 @@
 }
 
 .submitButton:hover:not(:disabled) {
-    background: #0056b3;
+    background: var(--accent-hover);
 }
 
 .submitButton:disabled {
-    background: #6c757d;
+    background: var(--text-muted);
     cursor: not-allowed;
 }
 

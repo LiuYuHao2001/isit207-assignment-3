@@ -4,6 +4,7 @@
   min-height: 85dvh;
   padding: 0 8rem;
   scroll-snap-align: start;
+  background-color: var(--bg-primary);
 }
 
 .heroContent {
@@ -14,11 +15,12 @@
 .heroContent h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .heroSubtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -29,6 +31,7 @@
 .heroImage img {
   width: 100%;
   border-radius: 12px;
+  border: 1px solid var(--border-color);
 }
 
 .petSelectionSection {
@@ -44,6 +47,11 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.petPageButton:hover {
+  /* transform: scale(1.02); */
 }
 
 .imageContainer {
@@ -67,6 +75,11 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.petPageButton:hover .overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .petText {
@@ -75,6 +88,7 @@
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .featuresSection {
@@ -83,6 +97,7 @@
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
+  background-color: var(--bg-secondary);
 }
 
 .featuresHeader {
@@ -92,11 +107,12 @@
 
 .featuresHeader h2 {
   font-size: 2.5rem;
+  color: var(--text-primary);
 }
 
 .featuresHeader p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .featuresGrid {
@@ -105,4 +121,67 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 0 4rem;
+  }
+
+  .featuresSection {
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 0 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .petSelectionSection {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .petPageButton {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .featuresSection {
+    padding: 2rem;
+  }
+
+  .featuresHeader h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 0 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .petText {
+    font-size: 1.5rem;
+  }
+
+  .featuresSection {
+    padding: 1.5rem;
+  }
 }
