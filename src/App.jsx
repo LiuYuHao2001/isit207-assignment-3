@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Cats from "./pages/Cats";
 import Dogs from "./pages/Dogs";
 import Adopt from "./pages/Adopt";
+import Surrender from "./pages/Surrender";
 import ErrorPage from "./pages/ErrorPage";
 import "./App.css";
 
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/adopt" element={<Adopt />} />
+          <Route path="/surrender" element={<Surrender />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

@@ -13,7 +13,6 @@ import {
   FaFacebook,
   FaTiktok,
   FaYoutube,
-  FaHeart,
 } from "react-icons/fa";
 
 function Footer() {
@@ -77,7 +76,9 @@ function Footer() {
           <p>
             Your donations go to food, shelter, and medicine for rescue animals.
           </p>
-          <button className={styles.surrenderButton}>Surrender a Pet</button>
+          <Link to="/surrender">
+            <button className={styles.surrenderButton}>Surrender a Pet</button>
+          </Link>
           <p>
             If you have a pet you can no longer care for, we will take them in.
           </p>
@@ -85,13 +86,9 @@ function Footer() {
         </div>
       </footer>
 
-      {/* Bottom Bar */}
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomContent}>
-          <p>
-            &copy; {currentYear} Pet Heaven. Made with{" "}
-            <FaHeart className={styles.heartIcon} /> for animals.
-          </p>
+          <p>&copy; {currentYear} Pet Heaven</p>
           <div className={styles.footerBottomLinks}>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>
