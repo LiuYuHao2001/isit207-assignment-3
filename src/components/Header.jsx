@@ -1,43 +1,60 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const Header = ({ isLoggedIn, onLogout }) => {
   return (
     <header className={styles.header}>
       <h2>
-        <Link to="/" className={styles.navLink}>
+        <NavLink to="/" className={styles.navLink} end>
           Pet Heaven
-        </Link>
+        </NavLink>
       </h2>
       <nav>
         <ul className={styles.navList}>
           <li>
-            <Link to="/products" className={styles.navLink}>
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
               Products
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/services" className={styles.navLink}>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
               Services
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/aboutus" className={styles.navLink}>
+            <NavLink
+              to="/aboutus"
+              className={({ isActive }) =>
+                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+              }
+            >
               About Us
-            </Link>
+            </NavLink>
           </li>
           {!isLoggedIn && (
             <li>
-              <Link to="/login" className={styles.navLink}>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navLink} ${styles.active}`
+                    : styles.navLink
+                }
+              >
                 Log In
-              </Link>
+              </NavLink>
             </li>
           )}
-          {/* {!isLoggedIn && (
-            <li>
-              <Link to="/signup" className={styles.navLink}>Sign Up</Link>
-            </li>
-          )} */}
           {isLoggedIn && (
             <li>
               <button onClick={onLogout} className={styles.logoutButton}>
