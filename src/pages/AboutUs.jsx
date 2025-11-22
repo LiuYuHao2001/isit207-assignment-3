@@ -25,7 +25,7 @@ const AboutUs = () => {
           At Pet Heaven, we're not just rehoming animals—we're architecting
           synergistic human-animal convergence ecosystems. Through our
           proprietary{" "}
-          <strong>P.A.W.S.™ (Proactive Animal Wellness Synergy)</strong>
+          <strong>P.A.W.S.™ (Proactive Animal Wellness Synergy) </strong>
           framework, we're disrupting the traditional pet adoption paradigm and
           creating value-added companionship experiences.
         </p>
