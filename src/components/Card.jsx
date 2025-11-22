@@ -1,12 +1,17 @@
 import styles from "./Card.module.css";
 
-const Card = ({ imageUrl, title, description }) => {
+const Card = ({ image, title, description, buttonText, onButtonClick }) => {
   return (
     <div className={styles.card}>
-      {imageUrl && <img src={imageUrl} alt={title} className={styles.image} />}
+      <img src={image} className={styles.image} />
       <div className={styles.content}>
-        {title && <h3 className={styles.title}>{title}</h3>}
-        {description && <p className={styles.description}>{description}</p>}
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{description}</p>
+        {buttonText && (
+          <button className={styles.button} onClick={onButtonClick}>
+            {buttonText}
+          </button>
+        )}
       </div>
     </div>
   );
