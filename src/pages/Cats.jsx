@@ -6,7 +6,7 @@ const Cats = () => {
   const APIKey =
     "live_u4ddF7j43glukjTEmOe8S1eRJhn0mqR8HkGfkEC7bqfP9eVFrzUpelOKhhtVyrMW";
 
-  return <Pets apiUrl={URL} petType="cats" apiKey={APIKey} />;
+  return <Pets petType="cats" apiUrl={URL} apiKey={APIKey} />;
 };
 
 export default Cats;

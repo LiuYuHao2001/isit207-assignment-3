@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Resource = ({ path, render, apiKey }) => {
-  // Add apiKey prop
   const initialState = {
     trans: [],
     loading: true,
@@ -14,14 +13,13 @@ const Resource = ({ path, render, apiKey }) => {
   const getData = async () => {
     try {
       const config = {
-        headers: apiKey ? { "x-api-key": apiKey } : {}, // Conditionally add API key
+        headers: apiKey ? { "x-api-key": apiKey } : {},
       };
 
       const result = await axios.get(path, config);
 
       console.log("API Result:", result.data);
 
-      // Validate that we got actual data, not HTML
       if (
         typeof result.data === "string" &&
         result.data.includes("<!doctype html>")
@@ -51,7 +49,7 @@ const Resource = ({ path, render, apiKey }) => {
   useEffect(() => {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [path, apiKey]); // Add apiKey as dependency
+  }, [path, apiKey]);
 
   return <div className="showlist">{render(state)}</div>;
 };
