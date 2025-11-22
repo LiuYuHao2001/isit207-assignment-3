@@ -3,7 +3,9 @@ import styles from "./Card.module.css";
 const Card = ({ image, title, description, buttonText, onButtonClick }) => {
   return (
     <div className={styles.card}>
-      <img src={image} className={styles.image} />
+      <div className={styles.imageContainer}>
+        <img src={image} alt={title} className={styles.image} />
+      </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.text}>{description}</p>
